@@ -13,3 +13,5 @@ function StatsDisplay({ stats, showReadingTime = true }: StatsDisplayProps) {
 }
 
 export default StatsDisplay;
+
+// Create a CharacterCounter component that combines the above components and manages the state.

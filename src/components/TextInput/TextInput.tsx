@@ -11,12 +11,7 @@ function TextInput({ onTextChange, placeholder, initialValue}: TextInputProps) {
 
   // Render
   return (
-    <input
-      type="text"
-      placeholder={placeholder}
-      defaultValue={initialValue}
-      onChange={handleChange}
-    /> 
+    <input type="text"  placeholder={placeholder}  defaultValue={initialValue}  onChange={handleChange} /> 
   );
 }
 
