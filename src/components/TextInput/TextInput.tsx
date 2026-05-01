@@ -16,8 +16,9 @@ function TextInput({ onTextChange, placeholder, initialValue}: TextInputProps) {
       placeholder={placeholder}
       defaultValue={initialValue}
       onChange={handleChange}
-    />
+    /> 
   );
 }
 
 export default TextInput;
+
