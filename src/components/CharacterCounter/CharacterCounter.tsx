@@ -7,11 +7,12 @@ import TextInput from '../TextInput/TextInput.tsx';
 
 function CharacterCounter({ minWords, maxWords, targetReadingTime }: CharacterCounterProps) {
 
-    const [ stats, setStats ] = useState<TextStats>({ characterCount: 0, wordCount: 0, readingTime: 0 });  // grouped 
-    
+    const [ stats, setStats ] = useState<TextStats>({ characterCount: 0, wordCount: 0, readingTime: 0 });  // grouped
+    const [inputText, setInputText] = useState<string>('')
 
     // Handler
     function handleTextChange(text:string) {
+        setInputText(text)
         const characterCount = text.length
         const wordCount = text.trim() === '' ? 0 : text.trim().split(/\s+/).length
         const readingTime = Math.ceil(wordCount / 200)
@@ -22,8 +23,8 @@ function CharacterCounter({ minWords, maxWords, targetReadingTime }: CharacterCo
   return (
     <>
     <TextInput onTextChange={handleTextChange}   placeholder="Type something..."   initialValue="" />
-    <StatsDisplay stats={stats} />
-    </>    
+    <StatsDisplay stats={stats} minWords={minWords} maxWords={maxWords} />
+    </>
   );
 }
 
