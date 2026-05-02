@@ -1,18 +1,11 @@
-import TextInput from './components/TextInput/TextInput'
+import CharacterCounter from './components/CharacterCounter/CharacterCounter';
 import './App.css'
 
 function App() {
-  const handleTextChange = (text: string) => {
-    console.log("Text changed:", text);
-  };
 
   return (
     <>
-      <TextInput
-        onTextChange={handleTextChange}
-        placeholder="Type something..."
-        initialValue=""
-      />
+      <CharacterCounter  minWords={25} maxWords={100} />
     </>
   );
 }

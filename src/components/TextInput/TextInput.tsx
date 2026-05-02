@@ -5,13 +5,17 @@ import type { TextInputProps } from "../../types";
 function TextInput({ onTextChange, placeholder, initialValue}: TextInputProps) {
   
  // Handler
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     onTextChange(event.target.value);
   };
 
   // Render
   return (
-    <input type="text"  placeholder={placeholder}  defaultValue={initialValue}  onChange={handleChange} /> 
+    <textarea className="w-full  p-4  border  border-gray-300  rounded-lg  focus:ring-2  focus:ring-blue-500  focus:border-blue-500" 
+    placeholder={placeholder}
+    defaultValue={initialValue}  
+    onChange={handleChange}
+    rows={6} /> 
   );
 }
 
